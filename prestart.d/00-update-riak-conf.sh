@@ -4,8 +4,9 @@
 cat <<END >>$RIAK_CONF
 nodename = riak@$HOST
 distributed_cookie = $CLUSTER_NAME
-listener.protobuf.internal = $HOST:$PB_PORT
-listener.http.internal = $HOST:$HTTP_PORT
+listener.protobuf.internal = 0.0.0.0:$PB_PORT
+listener.http.internal = 0.0.0.0:$HTTP_PORT
+riak_control = on
 END
 
 # Maybe add user config items
