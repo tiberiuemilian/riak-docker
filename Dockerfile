@@ -32,7 +32,7 @@ RUN apt-get update \
 && curl -s https://packagecloud.io/install/repositories/basho/${riak_pkg}/script.${pkg_format}.sh | bash \
 && apt-get install -y ${riak_pkg}=${riak_version}-1 \
 && curl -sSL "https://github.com/basho-labs/riak_explorer/releases/download/1.4.1/riak_explorer-1.4.1.patch-ubuntu-14.04.tar.gz" | tar -zxf - -C $RIAK_HOME --strip-components 2 \
-&& for f in riak_pb riak_kv riak_ts riak_dt riak_search riak_yokozuna;do rm -f $RIAK_HOME/lib/basho-patches/$f*; done
+&& for f in riak_pb riak_kv riak_ts riak_dt riak_search riak_yokozuna;do rm -f $RIAK_HOME/lib/basho-patches/$f*; done \
 && rm -rf /var/lib/apt/lists/* /tmp/*
 
 # Expose default ports
