@@ -28,7 +28,7 @@ RUN apt-get update \
 && apt-get install -y curl \
 && apt-get install -y libapr1 realpath jq unzip \
 && apt-get install -y iproute iputils-ping net-tools telnet \
-&& apt-get install -y vim
+&& apt-get install -y vim \
 && curl -s https://packagecloud.io/install/repositories/basho/${riak_pkg}/script.${pkg_format}.sh | bash \
 && apt-get install -y ${riak_pkg}=${riak_version}-1 \
 && curl -sSL "https://github.com/basho-labs/riak_explorer/releases/download/1.4.1/riak_explorer-1.4.1.patch-ubuntu-14.04.tar.gz" | tar -zxf - -C $RIAK_HOME --strip-components 2 \
